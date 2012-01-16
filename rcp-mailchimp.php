@@ -3,7 +3,7 @@
 Plugin Name: Restrict Content Pro - Mail Chimp
 Plugin URL: http://pippinsplugins.com/restrict-content-pro-mailchimp/
 Description: Include a Mail Chimp signup option with your Restrict Content Pro registration form
-Version: 1.0
+Version: 1.0.1
 Author: Pippin Williamson
 Author URI: http://pippinsplugins.com
 Contributors: Pippin Williamson
@@ -152,6 +152,7 @@ function rcp_check_for_email_signup($posted) {
 			$email = $posted['rcp_user_email'];
 		}
 		rcp_subscribe_email($email);
+		update_user_meta($user_id, 'rcp_subscribed_to_mailchimp', 1);
 	}
 }
 add_action('rcp_form_processing', 'rcp_check_for_email_signup');
