@@ -3,7 +3,7 @@
 Plugin Name: Restrict Content Pro - Mail Chimp
 Plugin URL: http://pippinsplugins.com/restrict-content-pro-mailchimp/
 Description: Include a Mail Chimp signup option with your Restrict Content Pro registration form
-Version: 1.0.2
+Version: 1.0.3
 Author: Pippin Williamson
 Author URI: http://pippinsplugins.com
 Contributors: Pippin Williamson
@@ -151,7 +151,25 @@ function rcp_check_for_email_signup($posted, $user_id) {
 			$email = $posted['rcp_user_email'];
 		}
 		rcp_subscribe_email($email);
-		update_user_meta($user_id, 'rcp_subscribed_to_mailchimp', 1);
+		update_user_meta($user_id, 'rcp_subscribed_to_mailchimp', 'yes');
 	}
 }
 add_action('rcp_form_processing', 'rcp_check_for_email_signup', 10, 2);
+
+function rcp_add_mc_table_column_header_and_footer() {
+	echo '<th style="width: 140px;">Mail Chimp Signup</th>';
+}
+add_action('rcp_members_page_table_header', 'rcp_add_mc_table_column_header_and_footer');
+add_action('rcp_members_page_table_footer', 'rcp_add_mc_table_column_header_and_footer');
+
+function rcp_add_mc_table_column_content($user_id) {
+	$signed_up = get_user_meta($user_id, 'rcp_subscribed_to_mailchimp', true);
+	
+	if($signed_up)
+		$signed_up = __('yes', 'rcp');
+	else
+		$signed_up = __('no', 'rcp');
+		
+	echo '<td>' . $signed_up . '</td>';
+}
+add_action('rcp_members_page_table_column', 'rcp_add_mc_table_column_content');

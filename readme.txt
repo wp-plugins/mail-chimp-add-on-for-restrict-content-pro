@@ -6,7 +6,7 @@ Donate link: https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=__LAzNlD
 Tags: Restrict content, member only, registered, logged in, restricted access, restrict access, limiit access, read-only, read only, mailchimp, mail chimp, newsletter, email list
 Requires at least 3.0
 Tested up to 3.3.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 
 Add Mail Chimp integration to Restrict Content Pro.
 
@@ -20,6 +20,14 @@ Learn more about Restrict Content Pro: http://pippinsplugins.com/restrict-conten
 
 == Changelog ==
 
+= 1.0.3 =
+
+* Added a "Mail Chimp Signup" column to the Members page to show whether a user signed up for your newsletter.
+
+= 1.0.2 =
+
+* Minor Improvements
+
 = 1.0.1 =
 
 * Added a user meta option that keeps track of when users choose to sign up for the newsletter *
@@ -27,3 +35,9 @@ Learn more about Restrict Content Pro: http://pippinsplugins.com/restrict-conten
 = 1.0 =
 
 * Initial release.
+
+== Upgrade Notice ==
+
+= 1.0.3 =
+
+* Added a "Mail Chimp Signup" column to the Members page to show whether a user signed up for your newsletter.
