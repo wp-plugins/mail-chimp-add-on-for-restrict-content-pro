@@ -1,4 +1,4 @@
-=== Mail Chimp for Restrict Content Pro ===
+=== Restrict Content Pro - Mail Chimp ===
 Author URI: http://pippinsplugins.com
 Author: Pippin Williamson
 Contributors: mordauk
