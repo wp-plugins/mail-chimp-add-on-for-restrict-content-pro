@@ -6,7 +6,7 @@ Donate link: https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=__LAzNlD
 Tags: Restrict content, member only, registered, logged in, restricted access, restrict access, limiit access, read-only, read only, mailchimp, mail chimp, newsletter, email list
 Requires at least 3.0
 Tested up to 3.3.1
-Stable tag: 1.0.3
+Stable tag: 1.0.3.1
 
 Add Mail Chimp integration to Restrict Content Pro.
 
