@@ -3,7 +3,7 @@
 Plugin Name: Restrict Content Pro - Mail Chimp
 Plugin URL: http://pippinsplugins.com/restrict-content-pro-mailchimp/
 Description: Include a Mail Chimp signup option with your Restrict Content Pro registration form
-Version: 1.0.3.1
+Version: 1.0.4
 Author: Pippin Williamson
 Author URI: http://pippinsplugins.com
 Contributors: Pippin Williamson
@@ -96,7 +96,7 @@ function rcp_get_mailchimp_lists() {
 		
 		$lists = array();
 		
-		require_once(dirname(__FILE__) . '/mailchimp/MCAPI.class.php');
+		require_once('mailchimp/MCAPI.class.php');
 		$api = new MCAPI($rcp_mc_options['mailchimp_api']);
 		$list_data = $api->lists();
 		if($list_data) :
@@ -115,7 +115,7 @@ function rcp_subscribe_email($email) {
 	global $rcp_mc_options;
 	
 	if(strlen(trim($rcp_mc_options['mailchimp_api'])) > 0 ) {
-		require_once(dirname(__FILE__) . '/mailchimp/MCAPI.class.php');
+		require_once('mailchimp/MCAPI.class.php');
 		$api = new MCAPI($rcp_mc_options['mailchimp_api']);
 		
 		if($api->listSubscribe($rcp_mc_options['mailchimp_list'], $email, '') === true) {
@@ -139,7 +139,7 @@ function rcp_mailchimp_fields() {
 	}
 	echo ob_get_clean();
 }
-add_action('rcp_after_register_form_fields', 'rcp_mailchimp_fields');
+add_action('rcp_before_registration_submit_field', 'rcp_mailchimp_fields', 100);
 
 // checks whether a user should be signed up for he mailchimp list
 function rcp_check_for_email_signup($posted, $user_id) {
