@@ -2,11 +2,11 @@
 Author URI: http://pippinsplugins.com
 Author: Pippin Williamson
 Contributors: mordauk
-Donate link: https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=__LAzNlDH1NR-QahrDPLyvSwLpA2uZ5GilvqzDyLBSRSLnofSWzs_VoBhc4&dispatch=5885d80a13c0db1f8e263663d3faee8dc18bca4c6f47e633fcf61b288f5ebea2
+Donate link: http://pippinsplugins.com/support-the-site
 Tags: Restrict content, member only, registered, logged in, restricted access, restrict access, limiit access, read-only, read only, mailchimp, mail chimp, newsletter, email list
 Requires at least 3.0
-Tested up to 3.3.1
-Stable tag: 1.0.3.1
+Tested up to 3.4.2
+Stable tag: 1.0.5
 
 Add Mail Chimp integration to Restrict Content Pro.
 
@@ -19,6 +19,15 @@ This plugin will add a Mail Chimp Newsletter signup option to the member registr
 Learn more about Restrict Content Pro: http://pippinsplugins.com/restrict-content-pro-premium-content-plugin/
 
 == Changelog ==
+
+= 1.0.5 =
+
+* Fixed a class conflict that happened when other Mail Chimp plugins were installed
+* Improved settings page to match core WP UI
+
+= 1.0.4 = 
+
+* Updated the hook used to display the checkbox to work better with other add-ons.
 
 = 1.0.3 =
 
@@ -37,6 +46,15 @@ Learn more about Restrict Content Pro: http://pippinsplugins.com/restrict-conten
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.5 =
+
+* Fixed a class conflict that happened when other Mail Chimp plugins were installed
+* Improved settings page to match core WP UI
+
+= 1.0.4 = 
+
+* Updated the hook used to display the checkbox to work better with other add-ons.
 
 = 1.0.3 =
 
