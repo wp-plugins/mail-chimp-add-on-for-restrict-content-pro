@@ -3,7 +3,7 @@
 Plugin Name: Restrict Content Pro - Mail Chimp
 Plugin URL: http://pippinsplugins.com/restrict-content-pro-mailchimp/
 Description: Include a Mail Chimp signup option with your Restrict Content Pro registration form
-Version: 1.0.5
+Version: 1.1
 Author: Pippin Williamson
 Author URI: http://pippinsplugins.com
 Contributors: Pippin Williamson
@@ -132,7 +132,12 @@ function rcp_subscribe_email($email) {
 			require_once('mailchimp/MCAPI.class.php');
 		$api = new MCAPI($rcp_mc_options['mailchimp_api']);
 		
-		if($api->listSubscribe($rcp_mc_options['mailchimp_list'], $email, '') === true) {
+		$merge_vars = array(
+			'FNAME' => isset( $_POST['rcp_user_first'] ) ? sanitize_text_field( $_POST['rcp_user_first'] ) : '',
+			'LNAME' => isset( $_POST['rcp_user_last'] ) ? sanitize_text_field( $_POST['rcp_user_last'] ) : ''
+		);
+
+		if($api->listSubscribe( $rcp_mc_options['mailchimp_list'], $email, $merge_vars ) === true) {
 			return true;
 		}
 	}
@@ -147,7 +152,7 @@ function rcp_mailchimp_fields() {
 		if(strlen(trim($rcp_mc_options['mailchimp_api'])) > 0 ) { ?>
 		<p>
 			<input name="rcp_mailchimp_signup" id="rcp_mailchimp_signup" type="checkbox" checked="checked"/>
-			<label for="rcp_mailchimp_signup"><?php echo $rcp_mc_options['signup_label']; ?></label>
+			<label for="rcp_mailchimp_signup"><?php echo isset( $rcp_mc_options['signup_label'] ) ? $rcp_mc_options['signup_label'] : __( 'Signup for our newsletter', 'rcp'); ?></label>
 		</p>
 		<?php
 	}
