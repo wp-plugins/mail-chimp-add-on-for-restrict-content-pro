@@ -20,7 +20,7 @@ Learn more about Restrict Content Pro: http://pippinsplugins.com/restrict-conten
 
 == Changelog ==
 
-= 1.1 =
+= 1.2 =
 
 * Removed the MailChimp Signup column in order to fix display issues on smaller screens
 * Added MailChimp signup status to the View Member Details screen
