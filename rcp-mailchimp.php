@@ -3,7 +3,7 @@
 Plugin Name: Restrict Content Pro - MailChimp
 Plugin URL: http://pippinsplugins.com/restrict-content-pro-mailchimp/
 Description: Include a MailChimp signup option with your Restrict Content Pro registration form
-Version: 1.2
+Version: 1.2.1
 Author: Pippin Williamson
 Author URI: http://pippinsplugins.com
 Contributors: Pippin Williamson
@@ -136,17 +136,19 @@ function rcp_subscribe_email( $email = '' ) {
 	if ( ! empty( $rcp_mc_options['mailchimp_api'] ) ) {
 
 		$api_key = trim( $rcp_mc_options['mailchimp_api'] );
+		$list_id = trim( $rcp_mc_options['mailchimp_list'] );
 
 		if ( ! class_exists( 'MCAPI' ) )
 			require_once( 'mailchimp/MCAPI.class.php' );
+
 		$api = new MCAPI( $api_key );
 		
-		$merge_vars = array(
+		$merge_vars = apply_filters( 'rcp_mailchimp_merge_vars', array(
 			'FNAME' => isset( $_POST['rcp_user_first'] ) ? sanitize_text_field( $_POST['rcp_user_first'] ) : '',
 			'LNAME' => isset( $_POST['rcp_user_last'] )  ? sanitize_text_field( $_POST['rcp_user_last'] )  : ''
-		);
+		), $email, $list_id );
 
-		if ( $api->listSubscribe( $rcp_mc_options['mailchimp_list'], $email, $merge_vars ) === true ) {
+		if ( $api->listSubscribe( $list_id, $email, $merge_vars ) === true ) {
 			return true;
 		}
 	}

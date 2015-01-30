@@ -4,9 +4,9 @@ Author: Pippin Williamson
 Contributors: mordauk
 Donate link: http://pippinsplugins.com/support-the-site
 Tags: Restrict content, member only, registered, logged in, restricted access, restrict access, limiit access, read-only, read only, mailchimp, mail chimp, newsletter, email list
-Requires at least 3.6
-Tested up to 3.9
-Stable tag: 1.2
+Requires at least 3.9
+Tested up to 4.1
+Stable tag: 1.2.1
 
 Add Mail Chimp integration to Restrict Content Pro.
 
@@ -19,6 +19,10 @@ This plugin will add a Mail Chimp Newsletter signup option to the member registr
 Learn more about Restrict Content Pro: http://pippinsplugins.com/restrict-content-pro-premium-content-plugin/
 
 == Changelog ==
+
+= 1.2.1 =
+
+* Added a filter called "rcp_mailchimp_merge_vars" that lets developers modify the merge vars sent to MailChimp
 
 = 1.2 =
 
