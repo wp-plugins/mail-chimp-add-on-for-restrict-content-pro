@@ -1,4 +1,4 @@
-=== Restrict Content Pro - Mail Chimp ===
+=== Restrict Content Pro - MailChimp ===
 Author URI: http://pippinsplugins.com
 Author: Pippin Williamson
 Contributors: mordauk
@@ -8,7 +8,7 @@ Requires at least 3.9
 Tested up to: 4.2
 Stable tag: 1.2.1
 
-Add Mail Chimp integration to Restrict Content Pro.
+Add MailChimp integration to Restrict Content Pro.
 
 == Description ==
 
