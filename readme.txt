@@ -5,7 +5,7 @@ Contributors: mordauk
 Donate link: http://pippinsplugins.com/support-the-site
 Tags: Restrict content, member only, registered, logged in, restricted access, restrict access, limiit access, read-only, read only, mailchimp, mail chimp, newsletter, email list
 Requires at least 3.9
-Tested up to 4.2
+Tested up to: 4.2
 Stable tag: 1.2.1
 
 Add Mail Chimp integration to Restrict Content Pro.
